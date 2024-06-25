@@ -21,7 +21,7 @@ const App = () => {
           <Route path='/user' element={(user)?<UserPage/>:<Navigate to='/login'/>}></Route>
           <Route path='/login' element={!user?<Login/>:<Navigate to='/'/>}></Route>
           <Route path='/signup' element={!user?<SignUp/>:<Navigate to='/'/>}></Route>
-          <Route path='/' element={user?<Home/>:<Navigate to='/login'/>}></Route>
+          <Route path='/' element={<Home/>}></Route>
       </Routes>
       </div>
     </BrowserRouter>

@@ -7,19 +7,23 @@ import { useAuthContext } from '../Hooks/useAuthContext';
 
 export const Home=()=>{
     const {reviews,OutputReviews,dispatch}=useReviewCardContext();
-    const {user}=useAuthContext()
+    const {user}=useAuthContext();
+    console.log('Hi');
 
   useEffect(()=>{
     const fetchItem=async()=>{
       const response=await fetch('http://localhost:5000/reviews',{
-        headers:{
-          'Authorization':`Bearer ${user.token}`
-        }
+        // headers:{
+        //   'Authorization':`Bearer ${user.token}`
+        // }
       });
       const json=await response.json();
+      console.log(json);
       const OutputReviews=useGroupedData(json).groupedData;
       if(response.ok){
+        console.log('Hello');
         dispatch({type:'SET_REVIEWS',payload:{reviews:json,OutputReviews}})
+        console.log(OutputReviews);
       }
     }
 
@@ -28,7 +32,7 @@ export const Home=()=>{
 
   return (
     <div>
-      {reviews?<div>{OutputReviews.map((review)=>{
+      {OutputReviews?<div>{OutputReviews.map((review)=>{
         return <ReviewCard key={review.id} review={review}/>
       })}</div>:<h2>Loading....</h2>}
     </div>

@@ -11,9 +11,8 @@ const {
 
 const router = express.Router();
 
-router.use(requireAuth);
-
 router.get("/", getReviews);
+router.use(requireAuth);
 
 router.post("/", addReview);
 
