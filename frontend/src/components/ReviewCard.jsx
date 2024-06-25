@@ -10,7 +10,7 @@ export const ReviewCard=({review})=>{
         console.log(OutputReviews);
         const deleteItem=OutputReviews.find(obj=>obj.id==id);
         console.log(deleteItem);
-        const response=await fetch("http://localhost:5000/"+deleteItem._id.name,{
+        const response=await fetch("http://localhost:5000/reviews"+deleteItem._id.name,{
           method:'DELETE',
           headers:{
             'Authorization':`Bearer ${user.token}`

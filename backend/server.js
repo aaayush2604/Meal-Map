@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("", ReviewCardRoutes);
+app.use("/reviews", ReviewCardRoutes);
 app.use("/user", userRoutes);
 
 mongoose

@@ -15,10 +15,10 @@ router.use(requireAuth);
 
 router.get("/", getReviews);
 
-router.get("/user", getUserReviews);
-
 router.post("/", addReview);
 
 router.delete("/:id", deleteReview);
+
+router.get("/user", getUserReviews);
 
 module.exports = router;

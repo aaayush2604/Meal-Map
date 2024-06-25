@@ -11,7 +11,7 @@ export const Home=()=>{
 
   useEffect(()=>{
     const fetchItem=async()=>{
-      const response=await fetch('http://localhost:5000',{
+      const response=await fetch('http://localhost:5000/reviews',{
         headers:{
           'Authorization':`Bearer ${user.token}`
         }

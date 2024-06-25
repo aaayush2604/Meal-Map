@@ -8,7 +8,7 @@ export const UserReviews=()=>{
     const [localReviews,setLocalReviews]=useState(null);
     useEffect(()=>{
         const fetchUserReviews=async()=>{
-            const response=await fetch("http://localhost:5000/user",{
+            const response=await fetch("http://localhost:5000/reviews/user",{
                 headers:{
                     'Authorization':`Bearer ${user.token}`
                 }
@@ -28,7 +28,7 @@ export const UserReviews=()=>{
 
     const handleDelete=async(review)=>{
         console.log(review._id);
-        const response=await fetch("http://localhost:5000/"+review._id,{
+        const response=await fetch("http://localhost:5000/reviews"+review._id,{
           method:'DELETE',
           headers:{
             'Authorization':`Bearer ${user.token}`
