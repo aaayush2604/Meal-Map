@@ -6,16 +6,26 @@ export const SignUp=()=>{
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
     const {signUp,IsLoading,error}=useSignUp();
+    const [username,setUsername]=useState('');
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        await signUp(email,password)
+        await signUp(email,password,username)
     }
 
     return <>
         <div className='w-full h-full loginPage flex items-center justify-center'>
         <form onSubmit={handleSubmit} className='fixed bg-white mx-auto my-auto  h-[50%] sm:h-[70%] w-[30%] flex flex-col items-center justify-around min-w-60 rounded-md z-100'>
-            <div className='h-1/6 text-[3vw] sm:text-[1vw]'><span className='block text-[6vw] sm:text-[3vw] text-[var(--secondary-color)] text-center'>SignUp</span> ...to Start Your Food Adventure</div>
+            <div className='h-1/5 text-[3vw] sm:text-[1vw]'><span className='block text-[6vw] sm:text-[3vw] text-[var(--secondary-color)] text-center'>SignUp</span> ...to Start Your Food Adventure</div>
+            <div className=' h-1/6 sm:h-1/5 flex flex-col w-full items-center'>
+            <label className='w-[90%] text-left h-1/2'>Username:</label>
+            <input 
+                type='text'
+                onChange={(e)=>{setUsername(e.target.value)}}
+                value={username}
+                className='border-black border-[1px] w-[90%] rounded-md h-1/2'
+            ></input>
+            </div>
             <div className=' h-1/6 sm:h-1/5 flex flex-col w-full items-center'>
             <label className='w-[90%] text-left h-1/2'>Email:</label>
             <input 

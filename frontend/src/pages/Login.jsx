@@ -8,10 +8,6 @@ export const Login = () => {
   const {login,IsLoading,error}=useLogin();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {NavBarExpanded,dispatch}=useLayoutContext();
-  const backgroundImage="url('../assets/login_bg.jpg')";
-  
-  console.log(NavBarExpanded);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
