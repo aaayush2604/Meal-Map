@@ -43,7 +43,6 @@ export const Home=()=>{
             Click Here
           </span> to Leave your own Reviews</div></div>
         }
-        
         {OutputReviews.map((review)=>{
         return <ReviewCard key={review.id} review={review}/>
       })}</div>:<h2>Loading....</h2>}

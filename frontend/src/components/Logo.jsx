@@ -6,6 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import { useAuthContext } from '../Hooks/useAuthContext';
 import { useLogOut } from '../Hooks/useLogOut';
 import { Link } from 'react-router-dom';
+import { UserProfileBox } from './UserProfileBox';
 
 export const Logo=()=>{
     const [ShowNavBar,SetShowNavBar]=useState(true);
@@ -43,12 +44,13 @@ export const Logo=()=>{
                 }           
                 </div>}
             {!ShowNavBar && displayMenu && 
-                <div className='miniNav  fixed right-3 top-[12vh] bg-[var(--primary-color)] w-[30vw] h-[25vh] rounded-md' onClick={()=>setDisplayMenu(false)}>
+                <div className='miniNav  fixed right-3 top-[12vh] bg-[var(--primary-color)] w-[40vw] h-[40vh] rounded-md' onClick={()=>setDisplayMenu(false)}>
+                    {user && <div className='h-2/5 text-[var(--primary-color)] bg-white'><UserProfileBox user={user}/></div>}
                      <Link to='/' className='text-white w-full flex items-center h-10 hover:text-black hover:bg-white'> <span className='w-full text-center text-[5vw] sm:text-xl'>Home</span></Link>
                     {user?
                         <div className='w-[100%] flex  flex-col justify-start'>
-                        <button  className='text-white w-full flex items-center hover:text-black h-10 hover:bg-white' onClick={handleClick}><span className='w-full text-center test-[5vw] sm:text-xl'>LogOut</span></button>
-                        <Link to='/user' className='text-white w-full flex items-center hover:bg-white h-10 hover:text-black'><span className='w-full text-center text-[5vw] sm:text-xl'>User</span> </Link>
+                        <button  className='text-white w-full flex items-center hover:text-black h-10 hover:bg-white' onClick={handleClick}><span className='w-full text-center text-[5vw] sm:text-xl'>LogOut</span></button>
+                        <Link to='/user' className='text-white w-full flex items-center hover:bg-white h-14 hover:text-black'><span className='w-full text-center text-[5vw] sm:text-xl'>User Reviews</span> </Link>
                         </div>
                         :
                         <div className='w-[100%] flex flex-col justify-start'>

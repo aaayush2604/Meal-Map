@@ -49,7 +49,7 @@ export const Navbar=()=>{
         {
             showNavBar &&
             <nav className={` navbar h-screen flex flex-col items-start justify-start bg-[var(--primary-color)] shadow-md duration-300 ease-in-out ${Expanded ? 'fixed w-36 sm:w-64 ' : 'w-16 z-1'}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            {Expanded && user &&  <div className='text-white w-full'><UserProfileBox user={user}/></div>}
+            {Expanded && user &&  <div className='text-white w-full h-[40vh]'><UserProfileBox user={user}/></div>}
             <Link to='/' className='text-white w-full flex items-center h-12 hover:text-black hover:bg-white'><FaHome className='w-[30px] h-[30px] m-2'/>{Expanded && <span className='w-3/4 text-center text-[5vw] sm:text-xl'>Home</span>}</Link>
             {user?
             <div className='w-[100%] h-24'>
