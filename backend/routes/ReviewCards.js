@@ -12,6 +12,7 @@ const {
 const router = express.Router();
 
 router.get("/", getReviews);
+
 router.use(requireAuth);
 
 router.post("/", addReview);

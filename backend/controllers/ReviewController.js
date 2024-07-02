@@ -22,6 +22,7 @@ const addReview = async (req, res) => {
 };
 
 const deleteReview = async (req, res) => {
+  console.log("Hi");
   const { id } = req.params;
   console.log(id + "Hello");
   const review = await ReviewCards.findOneAndDelete({ _id: id });

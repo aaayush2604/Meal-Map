@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const ReviewCardRoutes = require("./routes/ReviewCards.js");
 const userRoutes = require("./routes/user.js");
+// const { getJson } = require("serpapi");
 
 const app = express();
 app.use(express.json());

@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
+    overflow-x:hidden;
+}
+
+@font-face {
+    font-family: Font1;
+    src: url('./assets/fonts/MoonkidsPersonalUseExtbd-gxPZ3.ttf');
+}
+
+@font-face {
+    font-family:Font2;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/merriweather@latest/latin-400-normal.woff) format('woff');
+}
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+   /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+  }
+}
+
+:root{
+    --primary-color: #fc5316;
+    --secondary-color:#03c4e9;
+}
+
+.loginPage{
+    background-image:url('./assets/login_bg.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.HomePage{
+    background-image:url('./assets/LoginBg.jpeg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.UserPage{
+    background-image:url('./assets/UserBg.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.navbar{
+    z-index:300;
+}
+
+.miniNav{
+    z-index:300;
+}
+
+
+
+input{
+    padding-left:10px;
+}
