@@ -14,7 +14,7 @@ const ReviewCardForm =({handleClick}) => {
     const handleSubmit=async (e)=>{
         e.preventDefault();
         const ReviewCard={Name,City,Rating:Stars};
-        const response=await fetch("http://localhost:5000/reviews",{
+        const response=await fetch("https://meal-map-backend.vercel.app/reviews",{
             method:"POST",
             body:JSON.stringify(ReviewCard),
             headers:{

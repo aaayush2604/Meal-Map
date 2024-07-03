@@ -31,7 +31,7 @@ export const UserReviews=()=>{
 
     const handleDelete=async(review)=>{
         console.log(review._id);
-        const response=await fetch("http://localhost:5000/reviews/"+review._id,{
+        const response=await fetch("https://meal-map-backend.vercel.app/reviews/"+review._id,{
           method:'DELETE',
           headers:{
             'Authorization':`Bearer ${user.token}`
