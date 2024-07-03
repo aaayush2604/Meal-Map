@@ -13,7 +13,7 @@ export const Home=()=>{
 
   useEffect(()=>{
     const fetchItem=async()=>{
-      const response=await fetch('https://meal-map-backend.vercel.app//reviews');
+      const response=await fetch('http://localhost:5000/reviews');
       const json=await response.json();
       console.log(json);
       const OutputReviews=useGroupedData(json).groupedData;
@@ -34,7 +34,8 @@ export const Home=()=>{
   return <div className='w-full h-full pt-5 mt-3 px-[1vw] HomePage no-scrollbar'>
       
       {OutputReviews?<div className=' flex flex-wrap justify-around flex-col pl-[3vw] no-scrollbar'>
-        {showForm?
+        {user && <div>
+        {(showForm)?
           
           <ReviewCardForm handleClick={handleClick}/>
           :
@@ -43,6 +44,7 @@ export const Home=()=>{
             Click Here
           </span> to Leave your own Reviews</div></div>
         }
+        </div>}
         {OutputReviews.map((review)=>{
         return <ReviewCard key={review.id} review={review}/>
       })}</div>:<h2>Loading....</h2>}
