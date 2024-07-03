@@ -13,7 +13,7 @@ export const Home=()=>{
 
   useEffect(()=>{
     const fetchItem=async()=>{
-      const response=await fetch('http://localhost:5000/reviews');
+      const response=await fetch('https://meal-map-backend.vercel.app//reviews');
       const json=await response.json();
       console.log(json);
       const OutputReviews=useGroupedData(json).groupedData;
