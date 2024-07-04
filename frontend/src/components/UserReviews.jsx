@@ -11,7 +11,7 @@ export const UserReviews=()=>{
     const [localReviews,setLocalReviews]=useState(null);
     useEffect(()=>{
         const fetchUserReviews=async()=>{
-            const response=await fetch("http://localhost:5000/reviews/user",{
+            const response=await fetch("https://meal-map-backend.vercel.app/reviews/user",{
                 headers:{
                     'Authorization':`Bearer ${user.token}`
                 }
